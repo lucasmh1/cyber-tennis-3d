@@ -1,0 +1,95 @@
+:root {
+  --font-display: 'Orbitron', sans-serif;
+  --font-ui: 'Rajdhani', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --cyber-bg: #04050d;
+  --cyber-cyan: #00d4ff;
+  --cyber-magenta: #ff00aa;
+  --cyber-emerald: #00ffa3;
+  --cyber-amber: #ff9900;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--cyber-bg);
+  color: #e6f4ff;
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+.app-shell {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 35%, #0c1228 0%, #04050d 75%);
+}
+
+.app-shell canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  outline: none;
+}
+
+.cyber-panel {
+  background: linear-gradient(145deg, rgba(8, 13, 28, 0.82), rgba(4, 7, 17, 0.9));
+  border: 1px solid rgba(0, 212, 255, 0.28);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.55),
+    inset 0 0 18px rgba(0, 212, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.cyber-scanlines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.015) 0px,
+    rgba(255, 255, 255, 0.015) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.cyber-glow-text {
+  text-shadow:
+    0 0 10px rgba(0, 212, 255, 0.65),
+    0 0 22px rgba(0, 212, 255, 0.28);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono);
+}
+
+@keyframes cyberPulse {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-cyber-pulse {
+  animation: cyberPulse 1.8s ease-in-out infinite;
+}
